@@ -1,0 +1,69 @@
+============================================================
+RELATÓRIO DE TESTES PRÁTICOS - PROCESSO RUBEUS
+Candidato: André Gonçalves
+Data: 08/03/2026 (Day 37 - Ciclo Intensivo)
+Repositório: https://github.com/Andre-Goncalves89/rubeus-qa-certification
+
+--- SITE 01: PÁGINA DE CERTIFICAÇÃO ---
+
+ITEM 01 - Redirecionamento incorreto no rodapé
+Tipo: Correção | Classificação: Utilidade | Prioridade: Alta
+Descrição: Botão "Quero me certificar" redireciona para google.com.
+
+ITEM 02 - Erro de script: ActionsForm is not defined
+Tipo: Correção | Classificação: Utilidade | Prioridade: Alta
+Descrição: Falha de runtime via console que trava a lógica do formulário.
+
+ITEM 03 - Erros ortográficos nos Cards de cursos
+Tipo: Correção | Classificação: Desejabilidade | Prioridade: Média
+Descrição: Botão incompleto ("Saiba") e erro grosseiro ("Salba mais").
+
+ITEM 04 - Falha de Validação no Telefone
+Tipo: Melhoria | Classificação: Usabilidade | Prioridade: Média
+Descrição: Campo aceita letras e não possui máscara de preenchimento.
+
+ITEM 05 - Bypass de campos obrigatórios
+Tipo: Correção | Classificação: Utilidade | Prioridade: Alta
+Descrição: Sistema permite avançar preenchendo apenas o e-mail.
+
+ITEM 06 - Sobreposição visual no Banner
+Tipo: Melhoria | Classificação: Desejabilidade | Prioridade: Baixa
+Descrição: Selo "Certificação Gratuita" obstrui o rosto da modelo.
+
+--- SITE 02: FACULDADE EXEMPLO ---
+
+ITEM 01 - Botão "INSCREVA-SE" sem link funcional
+Tipo: Correção | Classificação: Utilidade | Prioridade: Alta
+Descrição: Principal CTA do banner não possui destino (href="#").
+
+ITEM 02 - Falha no "Caminho Feliz" do formulário
+Tipo: Correção | Classificação: Utilidade | Prioridade: Alta
+Descrição: Dados válidos geram mensagem de erro em vez de sucesso.
+
+ITEM 03 - Erro de UI: Botão "CONCLUIR" sobreposto
+Tipo: Correção | Classificação: Desejabilidade | Prioridade: Alta
+Descrição: Botão visualmente "grudado" ao campo de Telefone (CSS).
+
+ITEM 04 - Telefone não obrigatório (Bypass)
+Tipo: Correção | Classificação: Utilidade | Prioridade: Alta
+Descrição: Permite envio de lead sem o campo de contato telefônico.
+
+ITEM 05 - Desalinhamento na Seção Diferenciais
+Tipo: Melhoria | Classificação: Desejabilidade | Prioridade: Média
+Descrição: Itens e ícones sem alinhamento vertical/horizontal.
+
+ITEM 06 - Erro de acentuação no Banner Principal
+Tipo: Correção | Classificação: Desejabilidade | Prioridade: Média
+Descrição: Texto exibe "Matriculas" (sem acento) em vez de "Matrículas".
+
+ITEM 07 - Carrossel de Banners estático
+Tipo: Melhoria | Classificação: Usabilidade | Prioridade: Baixa
+Descrição: Slides não alternam automaticamente (Inércia de UX).
+
+ITEM 08 - Input Nome sem limite de caracteres
+Tipo: Melhoria | Classificação: Usabilidade | Prioridade: Média
+Descrição: Ausência de maxlength permite quebra de layout/banco.
+
+--- NOTA SOBRE AUTOMAÇÃO ---
+Ambos os sites possuem suítes de teste em Cypress (Pasta: cypress/e2e)
+que validam de forma resiliente os bugs de maior criticidade listados.
