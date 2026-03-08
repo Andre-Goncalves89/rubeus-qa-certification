@@ -1,11 +1,22 @@
 {
   "name": "rubeus-qa-certification",
   "version": "1.0.0",
-  "description": "",
+  "description": "Suite de Automacao de Testes QA - Processo Seletivo Rubeus",
   "main": "index.js",
   "scripts": {
+    "test": "cypress run",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
-    "test": "npm run cypress:run"
+    "cypress:run": "cypress run"
+  },
+  "keywords": [
+    "cypress",
+    "qa",
+    "automation",
+    "rubeus"
+  ],
+  "author": "Andre Goncalves",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.17.0"
   }
 }
