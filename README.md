@@ -10,6 +10,10 @@
 ```
 git clone https://github.com/Andre-Goncalves89/rubeus-qa-certification.git
 ```
+# 2. ENTRE na pasta do projeto ou certifique-se de estar nela (Passo Crítico)
+```
+cd rubeus-qa-certification
+```
 ## 2. Instale as dependências
 ```
 npm install
