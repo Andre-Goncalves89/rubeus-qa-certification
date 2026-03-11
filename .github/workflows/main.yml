@@ -1,0 +1,45 @@
+# Workflow automatizado para correr os testes do Cypress
+name: Rubeus QA Pipeline 🐜
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do Repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Instalar Dependências
+        run: npm install
+
+      - name: Executar Testes do Cypress (Headless Mode)
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+          # Isto garante que todos os teus testes na pasta e2e são validados
+          spec: cypress/e2e/**
+
+      - name: Guardar Screenshots (em caso de falha)
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+
+      - name: Guardar Vídeos da Execução (sempre)
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cypress-videos
+          path: cypress/videos
