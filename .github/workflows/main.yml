@@ -1,11 +1,15 @@
-# Workflow automatizado para correr os testes do Cypress
+# Workflow de CI/CD para o projeto Rubeus QA com suporte a execução manual
 name: Rubeus QA Pipeline 🐜
 
 on:
+  # Roda automaticamente ao subir código para as branches principais
   push:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+  
+  # Gatilho manual: permite clicar no botão "Run workflow" na aba Actions do GitHub
+  workflow_dispatch:
 
 jobs:
   cypress-run:
@@ -27,17 +31,16 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
-          # Isto garante que todos os teus testes na pasta e2e são validados
           spec: cypress/e2e/**
 
-      - name: Guardar Screenshots (em caso de falha)
+      - name: Upload de Artefatos (Screenshots em caso de falha)
         uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-screenshots
           path: cypress/screenshots
 
-      - name: Guardar Vídeos da Execução (sempre)
+      - name: Upload de Vídeos (Sempre)
         uses: actions/upload-artifact@v4
         if: always()
         with:
